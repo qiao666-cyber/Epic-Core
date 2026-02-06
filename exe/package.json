@@ -1,7 +1,7 @@
 {
-  "name": "xrk-baker",
+  "name": "epic-core",
   "version": "1.0.0",
-  "description": "XRK Baker - Electron Application",
+  "description": "Epic Core - Electron Application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -9,67 +9,71 @@
     "debug": "electron . --inspect=5858",
     "postinstall": "electron-builder install-app-deps",
     "fix-electron": "rimraf node_modules/electron && npm install electron --force",
-    "build": "electron-builder",
-    "build:win": "electron-builder --win",
-    "build:mac": "electron-builder --mac",
-    "build:linux": "electron-builder --linux",
-    "build:nsis": "npx electron-builder --win --config.win.target=nsis"
+    "clean:dist": "rimraf dist",
+    "build": "npm run clean:dist && electron-builder",
+    "build:win": "npm run clean:dist && electron-builder --win",
+    "build:mac": "npm run clean:dist && electron-builder --mac",
+    "build:linux": "npm run clean:dist && electron-builder --linux",
+    "build:nsis": "npm run clean:dist && npx electron-builder --win --config.win.target=nsis"
   },
   "keywords": [
     "electron",
-    "xrk",
-    "baker"
+    "epic",
+    "core"
   ],
-  "author": "Xrkseek",
+  "author": "qiao",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "devDependencies": {
     "electron": "^31.0.0",
     "electron-builder": "^24.13.3",
-    "electron-reloader": "^1.2.3"
+    "electron-reloader": "^1.2.3",
+    "rimraf": "latest"
   },
   "build": {
-    "appId": "com.xrk.baker",
-    "productName": "XRK Baker",
+    "appId": "com.epic.core",
+    "productName": "Epic Core",
+    "copyright": "Copyright © 2026 Xrkseek",
     "directories": {
-      "output": "abc"
+      "output": "dist",
+      "buildResources": "."
     },
     "files": [
-      "main.js",
-      "preload.js",
-      "index.html",
-      "renderer.js",
-      "styles.css",
-      "app.js",
-      "package.json"
+      "**/*",
+      "!**/*.md",
+      "!**/node_modules/**/*",
+      "!dist/**/*",
+      "!.git/**/*"
     ],
     "win": {
+      "executableName": "Epic Core",
       "target": [
         {
           "target": "nsis",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
+          "arch": ["x64"]
         }
       ],
-      "icon": "icon.ico"
+      "icon": "icon.ico",
+      "requestedExecutionLevel": "asInvoker"
     },
     "nsis": {
-      "oneClick": true,
-      "perMachine": false,
-      "allowElevation": true,
-      "allowToChangeInstallationDirectory": false,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
       "installerIcon": "icon.ico",
       "uninstallerIcon": "icon.ico",
       "installerHeaderIcon": "icon.ico",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "XRK Baker"
+      "shortcutName": "Epic Core",
+      "deleteAppDataOnUninstall": false
     },
     "electronDownload": {
       "mirror": "https://npmmirror.com/mirrors/electron/"
     },
     "removePackageScripts": true,
+    "forceCodeSigning": false,
     "mac": {
       "target": [
         {
@@ -80,7 +84,7 @@
           ]
         }
       ],
-      "icon": "icon.icns"
+      "icon": "icon.ico"
     },
     "linux": {
       "target": [
@@ -92,7 +96,7 @@
           ]
         }
       ],
-      "icon": "icon.png"
+      "icon": "icon.ico"
     }
   }
 }
