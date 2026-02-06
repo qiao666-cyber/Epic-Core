@@ -5,7 +5,7 @@
 ## 安装依赖
 
 ```bash
-cd core/Epic-Core/exe
+
 npm install
 ```
 

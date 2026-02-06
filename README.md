@@ -76,7 +76,7 @@ Epic-Core/
 #### Electron 应用依赖
 
 ```bash
-cd core/Epic-Core/exe
+
 pnpm install
 ```
 
@@ -102,7 +102,7 @@ http://localhost:2537/epic-free
 #### 运行 XRK Baker Electron 应用
 
 ```bash
-cd core/Epic-Core/exe
+
 npm start
 ```
 
