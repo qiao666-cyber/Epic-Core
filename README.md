@@ -2,7 +2,7 @@
   <h1>Epic-Core</h1>
   <h3>Epic限免游戏查询</h3>
   <p>快速获取Epic Games Store上的限免游戏信息</p>
-  <img src="./src/img/1.png" alt="Epic-Core Logo" width="1024" height="512"> 
+  <img src="./src/img/1.png" alt="Epic-Core Logo" width="512" height="1024"> 
 </div>
 
 <hr>
