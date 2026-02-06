@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Epic 免费游戏 - 白嫖党的福音">
+    <meta name="theme-color" content="#0ea5e9">
+    <title>Epic 免费游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="title">Epic 免费游戏</h1>
+                    <p class="subtitle">白嫖党的福音！第一时间获取 Epic 商店每周免费游戏</p>
+                </div>
+                <div class="header-right">
+                    <div class="stats">
+                        <span class="stat-item">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <span id="callCount">84,985</span>
+                            <span class="stat-label">次调用</span>
+                        </span>
+                    </div>
+                    <button id="refreshBtn" class="btn btn-primary" aria-label="刷新数据">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 4v6h-6M1 20v-6h6"/>
+                            <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                        </svg>
+                        刷新
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="games-section">
+                <div class="section-header">
+                    <h2>当前免费游戏</h2>
+                    <div class="api-status">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span id="apiStatus">-</span>
+                        <span id="responseTime" class="response-time">-</span>
+                    </div>
+                </div>
+                <div id="gamesList" class="games-list">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>加载中...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>API 信息</h2>
+                <div class="api-info">
+                    <div class="info-item">
+                        <span class="info-label">请求方式</span>
+                        <span class="info-value method">GET</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">API 地址</span>
+                        <span class="info-value url">/api/qiao/epic-free</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">数据来源</span>
+                        <span class="info-value">uapis.cn</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="use-cases-section">
+                <h2>使用场景</h2>
+                <div class="use-cases">
+                    <div class="use-case">
+                        <div class="use-case-icon">🎮</div>
+                        <h3>游戏资讯应用</h3>
+                        <p>开发游戏资讯应用或网站</p>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-icon">🤖</div>
+                        <h3>推送机器人</h3>
+                        <p>制作 Epic 免费游戏推送机器人</p>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-icon">💡</div>
+                        <h3>收藏建议</h3>
+                        <p>为用户提供游戏收藏建议</p>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-icon">📚</div>
+                        <h3>游戏库管理</h3>
+                        <p>构建个人游戏库管理工具</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Epic 免费游戏 | 数据来源: uapis.cn</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
