@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:1009';
+const API_BASE_URL = 'http://bj.s2.natgo.cn:21700';
 
 const routes = [
     {

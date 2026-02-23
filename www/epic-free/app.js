@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:1009/api/qiao/epic-free';
+const API_URL = '/api/qiao/epic-free';
 let callCount = 84985;
 
 async function fetchEpicGames() {
